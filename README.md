@@ -1,2 +1,2 @@
 # Havalla_Flow_Chart
-A tool for role play outcomes in the Havalla world.
+A tool for determining role play outcomes in the Havalla world.
