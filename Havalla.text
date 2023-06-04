@@ -1,0 +1,115 @@
+# user input the following info: Zone, important area, Character Name, Character ID, and Activity [exploration, hunting & prey item, scavenging]
+# first checks if important area is valid if not returns error message to the user: area is not compatible for the chosen activity
+# check for activity specific bonuses
+    # example: Screech owl allows for reroll on failure for hunting
+# Computer Randomly chooses a number between 1-100: <= 30 failure, < 30 success  
+# If successful: computer randomly selects a number between 1-100 to decide how many items they will get: 
+    # If no FG:
+        # 1-13   = one item 
+        # 14-63  = two items
+        # 64-89  = three items
+        # 90-100 = four items
+    # If FG: 
+        # 1-10   = one item 
+        # 11-60  = two items
+        # 61-85  = three items
+        # 86-100 = four items
+# Computer randomly selects another number from 1-100 for each item to determine each item's quality:
+    # For Exploration:
+        # 1-40 = poor: 
+            #Computer randomly selects another number between 1-105 to choose a an item category 
+                # 1-15   = Vendor trash
+                # 16-30  = Crafted 
+                # 31-45  = Ore 
+                # 46-60  = Meat 
+                # 61-75  = Bone 
+                # 76-90  = Pelts 
+                # 91-105 = herbs 
+                    # Computer Randomly selects number between 1-Item_List.length
+
+        # 41-70  = common: 
+            # Computer randomly selects another number between 1-100 to choose a an item category
+                # 1-6    = Vendor trash
+                # 7-12   = Consumables 
+                # 13-19  = Crafted 
+                # 20-26  = Tools 
+                # 27-33  = Ore 
+                # 34-40  = Gem 
+                # 41-47  = Meat 
+                # 48-54  = Bone 
+                # 55-61  = Pelt 
+                # 62-68  = Vegetable 
+                # 69-75  = Fruit 
+                # 76-82  = Herb
+                # 83-89  = Plant
+                # 90-96  = Accessories/Armor/Weapons/Cosmetic 
+                # 97-100 = Companion 
+                    # Computer Randomly selects number between 1-Item_List.length
+
+        # 71-92  = uncommon: 
+            #Computer randomly selects another number between 1-100 to choose a an item category
+                # 1-8    = Vendor trash
+                # 9-16   = Consumables 
+                # 17-24  = Crafted 
+                # 25-32  = Ore 
+                # 33-40  = Gem 
+                # 41-48  = Meat 
+                # 49-56  = Bone 
+                # 57-64  = Pelt 
+                # 65-72  = Fruit 
+                # 73-81  = Plant 
+                # 82-90  = Accessories/Armor/Weapons/Cosmetic 
+                # 91-100 = Companion 
+                    # Computer Randomly selects number between 1-Item_List.length
+
+        # 93-97  = rare: 
+            #Computer randomly selects another number between 1-99 to choose a an item category
+                # 1-11  = Vendor trash
+                # 12-22 = Crafted 
+                # 23-33 = Ore 
+                # 34-44 = Gem 
+                # 45-55 = Meat 
+                # 56-66 = Bone 
+                # 67-77 = Pelt 
+                # 78-88 = Fruit 
+                # 89-99 = Accessories/Armor/Weapons/Cosmetic  
+                    # Computer Randomly selects number between 1-Item_List.length
+
+        # 98-100 = epic: 
+            #Computer randomly selects another number between 1-98 to choose a an item category
+                # 1-14  = Vendor trash
+                # 15-28 = Consumable 
+                # 29-42 = Crafted 
+                # 43-56 = Tools 
+                # 57-70 = Ore 
+                # 71-84 = Gem 
+                # 85-98 = Herb 
+                    # Computer Randomly selects number between 1-Item_List.length
+        
+    # For Hunting: (Prey item will be used to determin what the table used)
+        # 1-70   = poor/common 
+        # 71-95  = uncommon
+        # 96-100 = rare
+
+# For all items selected the computer will return an item id, name, link if applicable
+# This data is then used to select items from the tables corresponding to each activity and zone
+# Computer randomly select a number between 1-100: 
+    # 1-30 = injury 
+    # < 30 = unharmed
+        # if injured: random number between 1-100
+            # 1-85 = minor injury
+                # Roll d20 for total damage recieved
+            # 86-100 = major debuff
+                # Roll 1 d100
+                    # 1-20  sprain             -> -5 hp,  -1 sp agility 
+                    # 21-30 deafened           -> -5 hp,  -1 sp agility 
+                    # 31-40 concussion         -> -25 hp, -3 sp intellect 
+                    # 41-50 Fracture           -> -10 hp, -2 sp strength 
+                    # 51-60 minor open wound   -> -10 hp, -2 sp stamina 
+                    # 61-68 curse              -> -1 sp all stats
+                    # 69-75 poison             -> -30 hp -2 sp stamina && -2 agility
+                    # 76-84 internal injury    -> -25 hp -3 sp stamina
+                    # 85-89 broken bone        -> -50 hp -4 sp strength
+                    # 90-94 Severe open wound  -> -50 hp -4 sp stamina
+                    # 95-100 unstoppable bleed -> -50 hp -4 sp stamina && -4 stength
+
