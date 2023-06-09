@@ -1,4 +1,4 @@
-# user input the following info: Zone, important area, Character Name, Character ID, and Activity [exploration, hunting & prey item, scavenging]
+# user input the following info: Zone, important area, Character Name, Character ID, and Activity [exploration, hunting & prey item, scavenging], activity specific bonuses
 # first checks if important area is valid if not returns error message to the user: area is not compatible for the chosen activity
 # check for activity specific bonuses
     # example: Screech owl allows for reroll on failure for hunting
