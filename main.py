@@ -1,3 +1,4 @@
+from data import *
 from character import Character
 from services import Services
 
@@ -9,3 +10,4 @@ print(is_valid)
 
 isSuccess = services.rand_Num_Generator([])
 print(isSuccess)
+
